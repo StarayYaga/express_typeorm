@@ -1,6 +1,7 @@
-import {Express, Request, Response} from "express"
+import {Request, Response} from "express"
+import {Controller} from "../../db.controller"
+
 
 export async function deleteUser(req: Request,res:Response):Promise<void>{
-    const user = ''
-    res.send(user)
+    res.json(await Controller.deleteUser(req.body.id))
 }

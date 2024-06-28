@@ -4,7 +4,7 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-export const AppDataSource = new DataSource({
+const AppDataSource = new DataSource({
     type: "postgres",
     host: process.env.host_db,
     port: Number(process.env.port_db),
@@ -13,5 +13,7 @@ export const AppDataSource = new DataSource({
     database: process.env.db_name,
     synchronize: true,
     logging: true,
-    entities: [],
+    entities: [__dirname+"/entities/*.ts"],
 })
+
+export default AppDataSource

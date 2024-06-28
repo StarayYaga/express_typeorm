@@ -1,6 +1,6 @@
 import express, { Express } from "express";
-import {router} from "./routes/router"
-import {AppDataSource} from "./orm"
+import router from "./routes/router"
+import AppDataSource from "./orm"
 import dotenv from "dotenv"
 
 dotenv.config()
